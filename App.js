@@ -1,10 +1,14 @@
 import Exponent, { AppLoading } from 'expo';
 import React from 'react';
+// import { Provider } from 'react-redux';
 import EStyleSheet from 'react-native-extended-stylesheet';
-import Colors from './constants/Colors';
+
 // import HomeScreen from './src/screens/home/HomeScreen';
 import Root from './src/Root';
+
+import Colors from './constants/Colors';
 import { cachedFonts } from './helpers';
+// import store from './src/redux/store';
 
 EStyleSheet.build(Colors);
 

@@ -4,6 +4,7 @@ import { RestaurantApi } from '../../../constants/api';
 import { LoadingScreen } from '../../commons';
 import { MyRestaurantList} from './components';
 import styles from './styles/HomeScreen';
+import { Button, Icon } from 'native-base';
 import { FontAwesome } from '@expo/vector-icons';
 import Colors from '../../../constants/Colors';
 
@@ -14,10 +15,30 @@ class HomeScreen extends Component {
         restaurantApi
     }
 
-    static navigationOptions = {
+    static navigationOptions =  ({ navigation }) => {
+        return {
+            headerTitle: 
+            <FontAwesome 
+                name = "home"
+                size = {25}
+            />,
         headerStyle: {
-                backgroundColor: Colors.$redColor
+            backgroundColor: Colors.$redColor
         },
+        headerRight: (
+                    <Button 
+                        transparent 
+                        onPress={() => navigation.navigate('CreateRestaurant')}
+                    >
+                        <Icon
+                            name='md-add-circle'
+                            style={{
+                                fontSize: 30,
+                                color: Colors.$whiteColor
+                            }}
+                        />
+                    </Button>
+        ),
         tabBarIcon: ({ tintColor }) => (
                 <FontAwesome 
                     name = "home"
@@ -25,6 +46,7 @@ class HomeScreen extends Component {
                     color = {tintColor}
                 />
             ) 
+        }
     }
     // static navigationOptions: ({ navigation }) => ({
     //     tabBarIcon: ({ focused, tintColor }) => {

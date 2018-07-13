@@ -25,9 +25,12 @@ class RestaurantApi{
     }
 
     async fetchRestaurants() {
-        
-        const { data } = await axios.get(this.path);
-        return data;
+        try{
+            const { data } = await axios.get(this.path);
+            return data;
+        } catch (e){
+            console.log(e);
+        }
     }
 }
 

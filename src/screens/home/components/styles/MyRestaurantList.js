@@ -20,17 +20,17 @@ const styles = EStyleSheet.create({
   restaurantCard: {
     height: 200,
     width: 175,
-    marginHorizontal: '1.5%',
     backgroundColor: '$redColor'
   },
   restaurantCardTopContainer: {
     flex: 1,
-    position: 'relative'
+    position: 'relative',
+    backgroundColor: '$whiteColor',
+    marginHorizontal: '1.5%'
   },
   restaurantCardTitle: {
     fontFamily: 'montserratBold',
     position: 'absolute',
-    color: '$whiteColor',
     top: '2%',
     left: '2.5%'
   },
@@ -38,7 +38,8 @@ const styles = EStyleSheet.create({
     flex: 0.4,
     backgroundColor: '$whiteColor',
     justifyContent: 'center',
-    paddingHorizontal: '2.5%'
+    paddingHorizontal: '2.5%',
+    marginHorizontal: '1.5%'
   },
   restaurantCardMetaName: {
     fontSize: 15,

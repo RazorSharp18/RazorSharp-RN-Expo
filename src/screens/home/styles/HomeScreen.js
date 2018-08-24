@@ -16,6 +16,9 @@ const styles = EStyleSheet.create({
     bottomContainer: {
         flex: 0.9,
         backgroundColor: Colors.$blackBlueColor
+    },
+    marginRight3p: {
+        marginRight: '0%' //TODO Check this style for add icon alignment
     }
 });
 

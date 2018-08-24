@@ -32,6 +32,16 @@ class RestaurantApi{
             console.log(e);
         }
     }
+
+    async createRestaurants() {
+        try{
+            const response = await axios.post(`${this.path}`, {...arguments[0] });
+            console.log(response);
+            return response;
+        } catch (e){
+            console.log(e);
+        }
+    }
 }
 
 export { RestaurantApi }; 

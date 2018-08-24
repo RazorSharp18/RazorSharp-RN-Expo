@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import { RestaurantApi } from '../../../constants/api';
 import { LoadingScreen } from '../../commons';
 import { MyRestaurantList} from './components';
 import styles from './styles/HomeScreen';
-import { Button, Icon } from 'native-base';
-import { FontAwesome } from '@expo/vector-icons';
+import { FontAwesome, MaterialIcons } from '@expo/vector-icons';
 import Colors from '../../../constants/Colors';
 
 const restaurantApi = new RestaurantApi();
@@ -26,18 +25,15 @@ class HomeScreen extends Component {
             backgroundColor: Colors.$redColor
         },
         headerRight: (
-                    <Button 
-                        transparent 
-                        onPress={() => navigation.navigate('CreateRestaurant')}
-                    >
-                        <Icon
-                            name='md-add-circle'
+                    <TouchableOpacity style={styles.marginRight3p} onPress={() => navigation.navigate('CreateRestaurant')}>
+                        <MaterialIcons
+                            name='add-circle'
                             style={{
                                 fontSize: 30,
                                 color: Colors.$whiteColor
                             }}
                         />
-                    </Button>
+                    </TouchableOpacity>    
         ),
         tabBarIcon: ({ tintColor }) => (
                 <FontAwesome 
@@ -48,15 +44,6 @@ class HomeScreen extends Component {
             ) 
         }
     }
-    // static navigationOptions: ({ navigation }) => ({
-    //     tabBarIcon: ({ focused, tintColor }) => {
-    //       const { routeName } = navigation.state;
-    //       let iconName;
-    //       if (routeName === 'Home') {
-    //         iconName = `ios-information-circle${focused ? '' : '-outline'}`;
-    //       } else if (routeName === 'Settings') {
-    //         iconName = `ios-options${focused ? '' : '-outline'}`;
-    //       }
 
     state = {
         loading: false,
